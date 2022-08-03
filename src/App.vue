@@ -1,11 +1,7 @@
 <template>
-1
+  <router-view></router-view>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style lang="less" scoped></style>
