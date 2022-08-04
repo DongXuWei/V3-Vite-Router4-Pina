@@ -11,6 +11,7 @@
       </ul>
     </div>
     <div class="right">
+      
       <router-view></router-view>
     </div>
   </div>
