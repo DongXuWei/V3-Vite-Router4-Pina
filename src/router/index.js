@@ -6,8 +6,23 @@ const router = createRouter({
   // 配置路由规则
   routes: [
     {
-      path: '',
+      path: '/',
+      component: () => import('@/views/Login/LoginView.vue'),
       redirect: '/login'
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/Login/LoginView.vue')
+    },
+    {
+      path: '/home',
+      component: () => import('@/views/Layout/LayoutView.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/Home/HomeView.vue')
+        }
+      ]
     }
   ]
 })
