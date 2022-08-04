@@ -1,9 +1,10 @@
 <template>
   <div>YF,login欢迎你！</div>
+  <div></div>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>
