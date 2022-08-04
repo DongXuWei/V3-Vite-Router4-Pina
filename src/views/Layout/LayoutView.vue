@@ -7,6 +7,7 @@
         <el-radio-button :label="true">collapse</el-radio-button>
       </el-radio-group>
       <el-menu
+        :class="el - menu"
         default-active="2"
         class="el-menu-vertical-demo"
         :collapse="isCollapse"
@@ -40,17 +41,33 @@
       </el-menu>
     </div>
     <div class="rigth">
-      <router-view></router-view>
+      <!-- 头部 -->
+      <div class="top">
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          @select="handleSelect"
+        >
+          <el-menu-item index="1">Processing Center</el-menu-item>
+          <el-menu-item index="2-1">item one</el-menu-item>
+          <el-menu-item index="2-2">item two</el-menu-item>
+          <el-menu-item index="2-3">item three</el-menu-item>
+        </el-menu>
+      </div>
+      <!-- 路由出口 -->
+      <div class="view">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import {
-  Document,
+
   Menu as IconMenu,
   Location,
-  Setting,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
@@ -70,23 +87,38 @@ const handleOpen = (key, keyPath) => {
 const handleClose = (key, keyPath) => {
   console.log(key, keyPath);
 };
+
+const activeIndex = ref("1");
+const handleSelect = (key, keyPath) => {
+  console.log(key, keyPath);
+};
 </script>
 
 <style lang="less" scoped>
-
-.contaner{
+.contaner {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
 
-  .left{
-    width: 20%;
+  .left {
+    // width: 20%;
     height: 100vh;
+    // background-color: pink;
+    .el-menu {
+      // width: 100%;
+      height: 100%;
+    }
   }
-  .right{
-    width: 80%;
+  .right {
+    // width: 80%;
+    width: 100%;
     height: 100vh;
     background-color: skyblue;
+    .view {
+      width: 100%;
+      height: 100%;
+      background-color: red;
+    }
   }
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
