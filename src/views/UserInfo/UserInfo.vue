@@ -8,7 +8,7 @@
             <div class="islogin_top">
                 <div class="user_left">
                     <img src="@/assets/images/Header.png" alt="">
-                    <span>黑马头条号</span>
+                    <span>代币</span>
                 </div>
                 <div class="user_right">
                     <button type="default" size="mini" class="edit_btn">编辑资料</button>
