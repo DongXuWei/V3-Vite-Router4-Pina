@@ -1,1 +1,1 @@
-<template>我是首页</template>
+<template>XuWeiDong，欢迎您</template>
