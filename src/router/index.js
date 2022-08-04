@@ -39,6 +39,18 @@ const router = createRouter({
           component: () => import("@/views/UserInfo/UserInfo.vue"),
         },
       ],
+    },{
+      path: "/setting",
+      component: () => import("@/views/Layout/LayoutView.vue"),
+      meta: {
+        title: "设置",
+      },
+      children: [
+        {
+          path: "",
+          component: () => import("@/views/Setting/SettingView.vue"),
+        },
+      ],
     },
   ],
 });

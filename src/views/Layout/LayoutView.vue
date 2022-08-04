@@ -5,8 +5,8 @@
         <img src="@/assets/images/图层897.png" alt="" />
       </div>
       <ul v-for="(item, index) in routes" :key="index">
-        <li>
-          <router-link :to="item.path">{{ item.meta.title }}</router-link>
+        <li class="lis" @click="gotoRouter(item.path)">
+          <router-link class="link" :to="item.path">{{ item.meta.title }}</router-link>
         </li>
       </ul>
     </div>
@@ -26,6 +26,11 @@ const router = useRouter();
 //遍历出meta 循环渲染到左侧
 const routes = router.options.routes.filter((item) => item.meta);
 console.log(routes);
+
+//点击li跳转相对应的路由
+const  gotoRouter=(path)=>{
+  router.push(path)
+}
 </script>
 <style lang="less" scoped>
 .container {
@@ -43,6 +48,27 @@ console.log(routes);
         width: 50%;
       }
     }
+   ul{
+    width: 100%;
+    // background-color: tan;
+     .lis{
+      width: 100%;
+      line-height: 60px;
+       font-size: 24px;
+       cursor: pointer;
+       display: flex;
+       justify-content: flex-start;
+      padding-left: 10px;
+       &:hover{
+        background-color: skyblue;
+       }
+
+       .link{
+        color: white;
+        text-decoration: none;
+       }
+    }
+   }
   }
   .right {
     width: 80%;
