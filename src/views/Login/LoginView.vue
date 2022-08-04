@@ -1,5 +1,5 @@
 <template>
-  <div>我是叶帆，我是你们的爸爸</div>
+  <div>YF,login欢迎你！</div>
 </template>
 
 <script>
