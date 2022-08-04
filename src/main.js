@@ -6,6 +6,10 @@ import App from './App.vue'
 // element组件UI库
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+// avue
+import Avue from '@smallwei/avue';
+import '@smallwei/avue/lib/index.css';
+import axios from 'axios'
 
 // 导入路由
 import router from '@/router'
@@ -18,4 +22,5 @@ app.use(router)
 app.use(pinia)
 
 app.use(ElementPlus)
+app.use(Avue,{axios})
 app.mount('#app')
